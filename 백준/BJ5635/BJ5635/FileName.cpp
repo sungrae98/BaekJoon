@@ -1,17 +1,24 @@
-#include <iostream>
+#include<iostream>
+#include<string>
+#include<vector>
+#include<utility>
+#include<algorithm>
 using namespace std;
+
 int main() {
-	int N; //학생 수
-	cin >> N;
+	//학생의 수 n
+	int n;
+	cin >> n;
 
-	//생년월일을 저장할 배열 동적할당
-	string** str = new string*[N];
+	vector<pair<pair<int, int>, pair<int, string>>>v(n);
 
-	//학생 정보 받아오기
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < 4; j++) {
-			cin >> str[i][j];
-		}
+	for (int i = 0; i < n; i++) {
+		cin >> v[i].second.second >> v[i].second.first >> v[i].first.second >> v[i].first.first;
 	}
+	//오름차순 정렬
+	sort(v.begin(), v.end());
+
+	cout << v[n - 1].second.second << '\n';
+	cout << v[0].second.second << '\n';
 
 }
