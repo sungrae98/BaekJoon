@@ -8,6 +8,7 @@ int main() {
 	int n;
 	cin >> n;
 
+	//피보나치는 long으로
 	vector<long long> v;
 
 	v.push_back(0);
