@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include<algorithm>
+
 using namespace std;
 
 int main() {
@@ -10,16 +10,25 @@ int main() {
 
 	long mul = a * b * c;
 
-	string str = to_string(mul);
-	for (int i = 0; i <= 9; i++) {
-		//몇 번 쓰였는지 저장할 변수
-		int count = 0;
-		for (int j = 0; j < str.size(); j++) {
-			if (str[j]) {
-				count++;
-			}
+	//0 ~ 9까지 카운트할 배열(전부 0으로 초기화)
+	int arr[10] = { 0 };
+
+	while (true)
+	{
+		arr[mul % 10]++;
+
+		mul = mul / 10;
+
+		//몫이 0이면 반복문 탈출
+		if (mul == 0) {
+			break;
 		}
-		cout << count << '\n';
 	}
+
+	//배열 전체 출력
+	for (int i = 0; i < 10; i++) {
+		cout << arr[i] << "\n";
+	}
+
 	return 0;
 }
