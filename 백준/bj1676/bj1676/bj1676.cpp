@@ -9,7 +9,7 @@ int main() {
 	int result = 0;
 
 	for (int i = 5; i <= n; i*=5) {
-		result = n / i;
+		result += n / i;
 	}
 
 	cout << result << "\n";
