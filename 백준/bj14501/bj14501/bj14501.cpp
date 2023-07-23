@@ -1,0 +1,10 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+//n¿œ
+int n;
+int dp[16];
+int main() {
+
+}
